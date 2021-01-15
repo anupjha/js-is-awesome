@@ -1,12 +1,10 @@
-# Bubble Sort
+# Merge Sort
 
-Bubble sort is a sorting algorithm where each value in an array is compared to the next and swapped if the value on the left is greater than the value on the right. Bubble sort is notorious for being nonperformant, with a runtime of O(n2).
+Merge sort is a “divide and conquer” algorithm which means it divides its input array into two halves and recursively calls itself on each half, then merges the two sorted halves back together.
 
-You can use nested for-loops to code bubble sort, or a do while loop (which reads a bit cleaner and can be more performant).
+The time complexity of merge sort is O(n log n).
 
-The do-while loop solution will stop once a full pass is completed without swapping any items. This contrasts the nested for-loop solution which will test every item against every other regardless of if a swap has occurred.
-
-Thus, with the do-while loop solution, even though the Big-O runtime remains O(n2), as it’s the worst possible scenario, it’s not as likely to have a dataset which requires n2 passes.
+The mergeSort function is responsible for splitting the array into smaller sub-arrays while the merge function is the function which sorts the arrays.
 
 ```JavaScript
 function mergeSort(arr) {
