@@ -1,6 +1,6 @@
-![logo](logo.jpg)
-
-###### Last Commit: 15/01/2021
+<!-- ![logo](logo.jpg) -->
+<img src="logo.jpg" width="200" height="200">
+Last Commit: 15/01/2021
 
 ### Quick reference for frontend interviews.
 
