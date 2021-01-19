@@ -1,3 +1,4 @@
+/*
 # Queue
 
 Queues are very similar to stacks however they use the “first-in-firstout” paradigm. This means that the oldest element (the element that was added first) is the next item to be removed.
@@ -9,10 +10,10 @@ Queues are similar to linked lists (which we’ll cover next) and are typically 
 #### Downsides Of Queues
 
 Queues are much more difficult to update when adding and removing items than a stack because we’re adding items to one side of the structure and removing them from the other side.
+*/
 
-#### Using Arrays
+// Using Arrays
 
-```JavaScript
 export default class Queue {
   constructor() {
     this.queue = [];
@@ -33,4 +34,3 @@ export default class Queue {
     return this.length === 0;
   }
 }
-```

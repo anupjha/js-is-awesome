@@ -1,3 +1,4 @@
+/*
 # Merge Sort
 
 Merge sort is a “divide and conquer” algorithm which means it divides its input array into two halves and recursively calls itself on each half, then merges the two sorted halves back together.
@@ -6,7 +7,8 @@ The time complexity of merge sort is O(n log n).
 
 The mergeSort function is responsible for splitting the array into smaller sub-arrays while the merge function is the function which sorts the arrays.
 
-```JavaScript
+*/
+
 function mergeSort(arr) {
   if (arr.length < 2) {
     return arr;
@@ -31,7 +33,5 @@ function merge(left, right) {
   return results;
 }
 
-const testArr = [9,8,7,6,5,4,3,2,1,0,-1];
+const testArr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1];
 console.log(mergeSort(testArr));
-
-```

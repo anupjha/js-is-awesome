@@ -1,4 +1,5 @@
-# Linked List
+/*
+Linked List
 
 Linked lists are a series of linked nodes where each node points to the next node in the list. Each node has a value and a pointer to the next node. There are also doubly-linked lists in which each node also points to the previous node in the list.
 
@@ -11,14 +12,11 @@ or reach the end of the list. In a worst-case scenario this means that
 searching for an item has a runtime of O(n) where n is the number of
 items in the list.
 
-```
+
 | Value: | 'A'  | 'B'  | 'C'  | 'D'  |
 |--------|------|------|------|------|
 | Next:  | 'B'  | 'C'  | 'D'  | null |
-```
 
-```
-// LinkedList Structure
 {
     head: {
         value: '1',
@@ -36,49 +34,10 @@ items in the list.
     },
     length: 3
 }
-// DoubleLinked List
-{
-    head: {
-        value: '1',
-        prev: null,
-        next: {
-            value: '2',
-            prev: [circular reference],
-            next: {
-                value: '3',
-                prev: [circular reference],
-                next: null
-            }
-        }
-    },
-    tail: {
-        value: '3',
-        prev: {
-            value: '2',
-            prev: {
-                value: '1',
-                prev: null,
-                next: [circular reference]
-            },
-            next: [circular reference]
-        },
-        next: null
-    },
-    length: 3
-}
-```
 
-// Functional Way
+*/
 
-```
-  //Node
-  let Node = function(element) {
-    this.element = element;
-    this.next = null;
-  }
-```
 
-```
 class Node {
   constructor(value) {
     this.value = value;
@@ -202,9 +161,7 @@ const list = new LinkedList();
 list.push("Emma");
 list.push("Sarah");
 list.push("Ivy");
-```
 
-```
 deleteHead() {
   if (!this.head) return false;  this.size -= 1;  const deletedHead = this.head;  if (this.head.next) {
     this.head = this.head.next;
@@ -213,9 +170,7 @@ deleteHead() {
     this.tail = null;
   }  return true;
 }
-```
 
-```
 includes(value) {
   if (!this.head) return false;  let isNode = value.constructor.name === 'LinkedListNode';
   if (isNode) value = value.value;  let currentNode = this.head;  while (currentNode) {
@@ -225,9 +180,7 @@ includes(value) {
     currentNode = currentNode.next;
   };  return false;
 }
-```
 
-```
 find(callback) {
   if (Object.prototype.toString.call(callback) !== '[object Function]') {
     return new TypeError(callback + ' is not a function');
@@ -240,9 +193,7 @@ find(callback) {
     currentNode = currentNode.next;
   };  return undefined;
 }
-```
 
-```
 insert(val, index) {
   if (index < 0 || index > this.length) return null;
   if (index === this.length) return this.addTail(val);
@@ -259,17 +210,13 @@ insert(val, index) {
   this.length++;
   return true;
 }
-```
 
-```
 update(val, index) {
   let node = this.find(index);
   if (node) node.val = val;
   return node;
 }
-```
 
-```
 unshift(val) {
     const newNode = new Node(val);
     //if list is empty
@@ -378,204 +325,4 @@ unshift(val) {
       console.log("empty list")
     }
   }
-```
 
-```
-//DOUBLY LINKED
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.prev = null;
-    this.next = null;
-  }
-}
-class DoublyLinkedList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
-
-  push(val) {
-    const newNode = new Node(val);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      newNode.prev = this.tail;
-      this.tail = newNode;
-    }
-    this.length++;
-    return this;
-  }
-
-  pop() {
-    //in case of empty list
-    if (this.length === 0) {
-      return false;
-    }
-    //get popped node
-    const popped = this.tail;
-    //save newTail to a variable (could be null)
-    const newTail = this.tail.prev;
-    //if newTail is not null
-    if (newTail) {
-      //sever connection to popped node
-      newTail.next = null;
-      //sever connection from popped node
-      this.tail.prev = null;
-      //in case of 1 length list
-    } else {
-      //make sure to edit head in case newTail is null
-      this.head = null;
-    }
-    //assign new tail (could be null)
-    this.tail = newTail;
-    // subtract length
-    this.length--;
-
-    return popped;
-  }
-
-  shift() {
-    //in case list is empty
-    if (!this.head) {
-      return false;
-    }
-    //save shifted node to variable
-    const shiftedNode = this.head;
-    //make the new head the next (might be null)
-    const newHead = this.head.next; //might be null
-    //if list is more than 1
-    if (this.head !== this.tail) {
-      newHead.prev = null;
-      shiftedNode.next = null;
-    } else {
-      this.tail = null;
-    }
-    this.head = newHead;
-    this.length--;
-    return shiftedNode;
-  }
-
-  unshift(val) {
-    const newNode = new Node(val);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.head.prev = newNode;
-      newNode.next = this.head;
-      this.head = newNode;
-    }
-    this.length++;
-    return this;
-  }
-
-  insertAtIndex(index, val) {
-    //if index doesn't exist
-    if (index > this.length) {
-      return false;
-    }
-    if (index === 0) {
-      this.unshift(val);
-    } else if (index === this.length) {
-      this.push(val);
-    } else {
-      const newNode = new Node(val);
-      const after = this.accessAtIndex(index);
-      const before = after.prev;
-      after.prev = newNode;
-      before.next = newNode;
-      newNode.next = after;
-      newNode.prev = before;
-      this.length++;
-    }
-    return this;
-  }
-
-  removeAtIndex(index) {
-    let removedNode;
-    if (index >= this.length) {
-      return false;
-    }
-    if (index == 0) {
-      removedNode = this.shift();
-    } else if (index == this.length - 1) {
-      removedNode = this.pop();
-    } else {
-      removedNode = this.getNodeAtIndex(index);
-      const after = removedNode.next;
-      const before = removedNode.prev;
-      removedNode.next = null;
-      removedNode.prev = null;
-      before.next = after;
-      after.prev = before;
-      this.length--;
-    }
-    return removedNode;
-  }
-
-  getNodeAtIndex(index) {
-    if (index >= this.length || index < 0) {
-      return false;
-    }
-    let currentIndex = 0;
-    let currentNode = this.head;
-    while (currentIndex !== index) {
-      currentNode = currentNode.next;
-      currentIndex++;
-    }
-    return currentNode;
-  }
-
-  setNodeAtIndex(index, val) {
-    const foundNode = this.getNodeAtIndex(index)
-    if(foundNode){
-        foundNode.value = val
-        return foundNode;
-    }
-    return null;
-  }
-
-  printList() {
-    console.log(list)
-    if(this.head){
-      let current = this.head;
-      while (current.next) {
-        console.log(current);
-        current = current.next;
-      }
-      console.log(current);
-    } else {
-      console.log("empty list")
-    }
-  }
-}
-```
-
-A circular linked list is a variation of linked list in which there  is no end to the list. The last element of the list will point to the  first element instead of pointing to the null. All the nodes are connected to form a circle.
-
-```
-//Add new node
-  this.append = function(element){
-    //Create new node
-    const node = new Node(element);
-    let current;
-
-    //If head is empty
-    //Then make new node head
-    if(head === null){
-      head = node;
-    }else{
-      //Else add the new node as the next node
-      //And mark the next of new node to the head
-      current = this.getElementAt(length - 1);
-      current.next = node;
-    }
-
-    node.next = head;
-    length++;
-  }
-```

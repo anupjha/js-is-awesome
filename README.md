@@ -1,6 +1,6 @@
 <!-- ![logo](logo.jpg) -->
 <img src="logo.jpg" width="200" height="200">
-Last Commit: 15/01/2021
+Last Commit: 19/01/2021
 
 ### Quick reference for frontend interviews.
 
@@ -9,10 +9,9 @@ Last Commit: 15/01/2021
 <details>
   <summary>Basic Problem Solving</summary>
 
-- [Sum any number of digits - sum(1)(2)(3)......(n)()](ps/sum-of-any-numbers.md)
-- [Flatten an object - recursion](ps/sum-of-any-numbers.md)
-- [Common elements of 2 arrays](ps/sum-of-any-numbers.md)
-- [Flatten an object - recursion](ps/sum-of-any-numbers.md)
+- [Sum any number of digits - sum(1)(2)(3)......(n)()](ps/sum-of-any-numbers.js)
+- [Flatten an object - recursion](ps/flatten-obj.js)
+
 </details>
 
 <details>
@@ -39,31 +38,30 @@ Last Commit: 15/01/2021
 
 - Helpers
 
-  - [debounce & throttle](js-snippet/debounce-throttle.md)
-  - [sleep](js-snippet/debounce-throttle.md)
-  - [objectToArray & arrayToObject](js-snippet/debounce-throttle.md)
-  - [diff of 2 objects](js-snippet/debounce-throttle.md)
-  - [memoize a function](js-snippet/debounce-throttle.md)
+  - [debounce & throttle](js-snippet/helpers/debounce.throttle.js)
+  - [sleep](js-snippet/helpers/sleep.js)
+  - [objectToArray & arrayToObject](js-snippet/helpers/arrayToObj.objToArr.js)
+  - [diff of 2 objects](js-snippet/helpers/diffObj.js)
+  - [memoize a function](js-snippet/helpers/memoize.js)
   </details>
 
 <details>
   <summary>Data Structures</summary>
 
-- [Stack](data-structures/Stack.md)
-  - [Implement LRCache](ps/sum-of-any-numbers.md)
-- [Queue](data-structures/Stack.md)
-- [Single Linked List](data-structures/Stack.md)
-- [Double Linked List](data-structures/Stack.md)
+- [Stack](data-structures/Stack.js)
+  - [Implement LRCache](ps/xxxxx.js)
+- [Queue](data-structures/Queue.js)
+- [Single Linked List](data-structures/SingleLinkedList.js)
+- [Double Linked List](data-structures/DoubleLinkedList.js)
 </details>
 <details>
   <summary>Algorithms</summary>
 
-- [Insertion Sort](algorithms/InsertionSort.md)
-- [Selection Sort](algorithms/SelectionSort.md)
-- [Bubble Sort](algorithms/BubbleSort.md)
-- [Quick Sort](algorithms/QuickSort.md)
-- [Merge Sort](algorithms/MergeSort.md)
-  - Nested bullet
-  - Sub-nested bullet etc
-  - Bullet list item 2
+- [Insertion Sort](algorithms/insertionSort.js)
+- [Selection Sort](algorithms/selectionSort.js)
+- [Bubble Sort](algorithms/bubbleSort.js)
+- [Quick Sort](algorithms/quickSort.js)
+- [Merge Sort](algorithms/mergeSort.js)
+- [Binary Search](algorithms/binarySearch.js)
+
   </details>

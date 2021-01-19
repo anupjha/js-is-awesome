@@ -1,3 +1,4 @@
+/*
 # Stack
 
 A stack is a “last-in-first-out” data structure which means that the newest element (or the element which was added last) in the stack will be the first one removed.
@@ -12,9 +13,9 @@ Stacks, unfortunately don’t offer constant-time access to the Nth item in the 
 
 By contrast we can access specific indices in arrays with bracket notation. If we want the third item in an array we can access it in constant time with array[2].
 
-#### Using an Array
+*/
+// Using an Array
 
-```JavaScript
 class Stack {
   constructor() {
     this.stack = [];
@@ -29,8 +30,8 @@ class Stack {
   }
 
   pop() {
-    if( this.isEmpty() === false ) {
-    return this.stack.pop();
+    if (this.isEmpty() === false) {
+      return this.stack.pop();
     }
     return;
   }
@@ -43,68 +44,63 @@ class Stack {
     return this.length === 0;
   }
 }
-```
 
-#### Using an Object
+// Using an Object
 
-```JavaScript
 class Stack {
   constructor() {
-  this.count = 0;
-  this.data = {}
+    this.count = 0;
+    this.data = {};
   }
 
-get length() {
-  return this.count;
+  get length() {
+    return this.count;
   }
 
-push(item) {
-  this.data[this.count] = item;
-  this.count ++;
+  push(item) {
+    this.data[this.count] = item;
+    this.count++;
   }
 
-pop() {
-  this.count --;
-  delete this.data[this.count];
+  pop() {
+    this.count--;
+    delete this.data[this.count];
   }
 
-peek() {
-  return this.data[this.count];
+  peek() {
+    return this.data[this.count];
   }
 
-isEmpty() {
-  return this.count === 0;
+  isEmpty() {
+    return this.count === 0;
   }
 }
 
-```
+// Using Functions
 
-#### Using Functions
-
-```JavaScript
 function Stack() {
   this.stack = [];
 
-Stack.prototype.size = function() {
-  return this.stack.length;
-  }
-Stack.prototype.length = this.stack.length;
+  Stack.prototype.size = function () {
+    return this.stack.length;
+  };
+  Stack.prototype.length = this.stack.length;
 
-Stack.prototype.push = function(item) {
-  this.stack.push(item);
-  }
+  Stack.prototype.push = function (item) {
+    this.stack.push(item);
+  };
 
-Stack.prototype.pop = function() {
-  return this.stack.pop();
-  }
+  Stack.prototype.pop = function () {
+    return this.stack.pop();
+  };
 
-Stack.prototype.peek = function() {
-  return this.stack[this.length - 1];
-  }
+  Stack.prototype.peek = function () {
+    return this.stack[this.length - 1];
+  };
 
-Stack.prototype.isEmpty = function() {
-  return this.size === 0;
-  }
+  Stack.prototype.isEmpty = function () {
+    return this.size === 0;
+  };
 }
 
 //Test
@@ -113,7 +109,6 @@ s.push("a");
 s.push("b");
 s.push("c");
 s.pop();
-console.log(s.size())
-console.log(s.isEmpty())
-console.log(s)
-```
+console.log(s.size());
+console.log(s.isEmpty());
+console.log(s);
