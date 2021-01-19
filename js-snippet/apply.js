@@ -1,4 +1,3 @@
-```
 // Implement Apply Method
 let anup = {
   firstName: "Anup",
@@ -25,4 +24,3 @@ Function.prototype.myApply = function (context, args) {
 };
 
 let printName2 = printName.myApply(anup, ["Darbhanga", "Bihar"]);
-```

@@ -1,4 +1,3 @@
-```
 // Implement Bind Method
 let anup = {
   firstName: "Anup",
@@ -22,13 +21,12 @@ Function.prototype.myBind = function (context, ...args) {
   if (typeof this !== "function") {
     throw new Error(this + "cannot be bound as it's not callable");
   }
-  let fn = this;
+  let obj = this;
   let params = args.slice(1);
   return function (...args2) {
-    fn.apply(context, [...args, ...args2]);
+    obj.apply(context, [...args, ...args2]);
   };
 };
 
 let printMyName2 = printName.myBind(anup, "Darbhanga");
 printMyName2("Bihar");
-```
