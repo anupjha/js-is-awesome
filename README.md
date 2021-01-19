@@ -11,6 +11,7 @@ Last Commit: 19/01/2021
 
 - [Sum any number of digits - sum(1)(2)(3)......(n)()](ps/sum-of-any-numbers.js)
 - [Flatten an object - recursion](ps/flatten-obj.js)
+- [Reverse a String](ps/reverse-string.js)
 
 </details>
 
