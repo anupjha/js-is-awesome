@@ -20,9 +20,9 @@ Last Commit: 19/01/2021
 
 - Polyfills
 
-  - [Function.call](js-snippet/call.js)
-  - [Function.apply](js-snippet/apply.js)
-  - [Function.bind](js-snippet/bind.js)
+  - [Function.call](js-snippet/function.call.js)
+  - [Function.apply](js-snippet/function.apply.js)
+  - [Function.bind](js-snippet/function.bind.js)
   - [Array](js-snippet/array.js)
   - [Array.push](js-snippet/array.push.js)
   - [Array.pop](js-snippet/array.pop.js)
